@@ -22,6 +22,7 @@ app = FastAPI()
 # Load environment variables
 load_dotenv()
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+LLM_MODEL = os.getenv("LLM_MODEL", "claude-3-5-sonnet-20241022")
 REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
 REDIS_PORT = int(os.getenv("REDIS_PORT", "6379"))
 REDIS_PASSWORD = os.getenv("REDIS_PASSWORD", None)
@@ -31,7 +32,7 @@ if not ANTHROPIC_API_KEY:
 
 # Initialize LLM
 llm = ChatAnthropic(
-    model="claude-3-5-sonnet-20241022",
+    model=LLM_MODEL,
     temperature=0.7,
     max_tokens=1000,
     api_key=ANTHROPIC_API_KEY,

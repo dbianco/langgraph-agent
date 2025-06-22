@@ -39,6 +39,24 @@ npm install
 
 ## Configuración
 
+El proyecto requiere las siguientes variables de entorno:
+
+- `ANTHROPIC_API_KEY`: La clave de API de Anthropic.
+- `LLM_MODEL`: El modelo de LLM a utilizar (por defecto: claude-3-5-sonnet-20241022).
+- `REDIS_HOST`: Host de Redis (por defecto: localhost).
+- `REDIS_PORT`: Puerto de Redis (por defecto: 6379).
+- `REDIS_PASSWORD`: Contraseña de Redis (opcional).
+
+### Modelo de LLM
+
+Por defecto, el proyecto utiliza el modelo `claude-3-5-sonnet-20241022` de Anthropic. Puedes cambiar el modelo configurando la variable de entorno `LLM_MODEL`. Por ejemplo, para usar un modelo diferente, crea un archivo `.env` con:
+
+```env
+LLM_MODEL=claude-3-sonnet-20240215
+```
+
+Asegúrate de que el modelo que elijas sea compatible con el SDK de Anthropic y que tu clave de API tenga acceso a él.
+
 1. Establecer la variable de entorno con la API Key de Anthropic:
 ```bash
 export ANTHROPIC_API_KEY="tu_api_key_aqui"
