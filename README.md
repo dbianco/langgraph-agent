@@ -10,6 +10,17 @@ Una aplicación web que utiliza LangGraph y Anthropic para crear un asistente AI
 - Configurable a través de la interfaz web
 - Diseño responsivo
 
+## Interfaz de Usuario
+
+La aplicación incluye una interfaz web simple y moderna que permite interactuar con el agente:
+
+![Interfaz del Agente](agente.png)
+
+La interfaz muestra:
+- Campo de entrada para enviar mensajes al agente
+- Historial de conversación con mensajes de usuario y asistente
+- Diseño responsivo y fácil de usar
+
 ## Requisitos
 
 - Python 3.10 o superior
