@@ -16,8 +16,20 @@ from uuid import uuid4
 
 from memory.redis_memory import RedisConversationBufferMemory
 from utils.structured_output import parse_response, format_response_for_display
+from starlette.middleware import Middleware
+from starlette.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+middleware = [
+    Middleware(
+        CORSMiddleware,
+        allow_origins=['*'],  # Allows all origins
+        allow_credentials=True,
+        allow_methods=['*'],  # Allows all methods
+        allow_headers=['*'],  # Allows all headers
+    )
+]
+
+app = FastAPI(middleware=middleware)
 
 # Load environment variables
 load_dotenv()
